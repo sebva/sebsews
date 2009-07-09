@@ -1,4 +1,4 @@
-<? require 'header.php';
+<?php  require 'header.php';
 if($_POST['confirm']=='yes')
 	if(mysql_query('DELETE FROM '.$mysqlTableNews.' WHERE id = \''.$_POST['news'].'\''))
 		echo 'News n&deg; '.$_POST['news'].' supprimée !';

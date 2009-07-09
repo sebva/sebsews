@@ -1,9 +1,9 @@
-<? require 'header.php';?>
+<?php  require 'header.php';?>
 <ul>
 
 <!--Editer-->
 <li><form action="news_edit.php" method="post"><label>News à éditer : </label><select name="news">
-<?
+<?php 
 $reponse = mysql_query('SELECT title,id FROM '.$mysqlTableNews.' ORDER BY date');
 while ($donnees = mysql_fetch_array($reponse) )
 {
@@ -17,7 +17,7 @@ while ($donnees = mysql_fetch_array($reponse) )
 
 <!--Supprimer-->
 <li><form action="news_delete.php" method="post"><label>News à supprimer : </label><select name="news">
-<?
+<?php 
 $reponse = mysql_query('SELECT title,id FROM '.$mysqlTableNews.' ORDER BY date');
 while ($donnees = mysql_fetch_array($reponse) )
 {
@@ -29,4 +29,4 @@ while ($donnees = mysql_fetch_array($reponse) )
 
 <li><a href="index.php">Retour accueil administration</a></li>
 </ul>
-<? require 'footer.php'; ?>
+<?php  require 'footer.php'; ?>

@@ -1,4 +1,4 @@
-<?
+<?php
 $title='News';
 if(isset($_GET['news'])){
 	//Affichage de la news en question

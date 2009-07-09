@@ -1,4 +1,4 @@
-<?
+<?php
 if($page!='menu')
 {
 	$reponse = mysql_query('SELECT title,shorttitle FROM '.$mysqlTablePages.' ORDER BY id');

@@ -1,4 +1,4 @@
-<?
+<?php
 include_once('config.php');
 //bof Prérequis	
 	$page=$_GET['page'];	//$page est le nom court de la page

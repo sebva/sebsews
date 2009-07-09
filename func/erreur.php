@@ -1,4 +1,4 @@
-<?
+<?php
 $title = 'Erreur '.$erreur;
 $e400='Mauvaise requête';
 $f400="La requête HTTP n'a pas pu être comprise par le serveur en raison d'une syntaxe erronée.

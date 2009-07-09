@@ -1,9 +1,9 @@
-<? require 'header.php';?>
+<?php  require 'header.php';?>
 	<ul>
 	
 	<!--Editer-->	
 	<li><form action="page_edit.php" method="post"><label>Page à éditer : </label><select name="page">
-	<?
+	<?php 
 	$reponse = mysql_query('SELECT title,shorttitle FROM '.$mysqlTablePages.' WHERE menuseul=0 ORDER BY id');
 	while ($donnees = mysql_fetch_array($reponse) )
 	{
@@ -17,7 +17,7 @@
 	
 	<!--Supprimer-->	
 	<li><form action="page_delete.php" method="post"><label>Page à supprimer : </label><select name="page">
-	<?
+	<?php 
 	$reponse = mysql_query('SELECT title,shorttitle FROM '.$mysqlTablePages.' ORDER BY id');
 	while ($donnees = mysql_fetch_array($reponse) )
 	{
@@ -30,4 +30,4 @@
 	<!--News-->
 	<li><a href="index.php">Retour accueil administration</a></li>
 	</ul>
-<? require 'footer.php'; ?>
+<?php  require 'footer.php'; ?>

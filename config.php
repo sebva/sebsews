@@ -9,7 +9,7 @@ $rewrite='on'; //L'URL rewriting doit être activé (on) ou desactivé (off)
 
 //Services Google
 $googleAnalyticsCode = ''; //Votre code de suivi Google Analytics (si vide, Google Analytics est desactivé)
-$googleAnalyticsBlacklist = array('127.0.0.1', '192.168.1.60'); //Si vous souhaitez ne pas activer Google Analytics pour certaines IP (pour ne pas fausser les statistques par exemple
+$googleAnalyticsBlacklist = array('127.0.0.1', '192.168.1.60'); //Si vous souhaitez ne pas activer Google Analytics pour certaines IP (pour ne pas fausser les statistques par exemple)
 $googleWebmasterToolsMetaTag = ''; //Idem, mais pour Google Webmaster Tools
 $googleAppsDomain = ''; //Encore la même chose, mais pour votre domaine Google Apps
 
