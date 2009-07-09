@@ -1,0 +1,177 @@
+@media handheld, screen{
+	body { /* Corps */
+		margin:0;
+		font-family:Verdana, Tahoma, Arial, Helvetica, sans-serif;
+	}
+	img {
+		border:0;
+		vertical-align:middle;
+	}
+	#conteneur {
+		width:100%; /* Largeur obligatoire pour le centrage */
+		margin:0; /* Collage aux bords */
+	}
+	#header { /* Header unique */
+		width:100%;
+		height:125px; /* On règle la largeur et la hauteur du header pour que le fond s'ajuste */
+		background-image:url(images/header.png); /* On fait venir le fond */
+		background-repeat:repeat-x;
+		margin-left:0 !important; /* HACK IE : */
+	}
+	#header_extensible {
+		width:100%;
+		background-image:url(images/header_ext.png);
+		margin-top:-1px;
+	}
+	#centre { /* Centre unique, contenant Menu et Texte */
+		width:100%; /* Doit prendre toute la page */
+		background-image:url(images/centre_fond.png); /* On fait venir le fond */
+		background-repeat:repeat-y;
+		padding-top:5px; /* Une marge en haut pour que les éléments ne collent pas à la bordure */
+	}
+	#menu { /* Menu unique */
+		width:170px;/* On règle la largeur du header pour que le Texte s'ajuste */
+		float:left; /* Pour que le Texte s'imbrique correctement */
+		color:#fff;	
+	}
+	#menu a{
+		font-weight:800;
+		font-size:0.7em; /* Faire joli et gras */
+		color:#fff; /* En blanc de préférence */
+		text-decoration:none; /* Pas souligné */
+		margin-left:10px; /* Pour faire beau */
+	}
+	#menu a:hover{
+		color:#ccc; /* En blanc de préférence */
+	}
+	.sousmenu
+	{
+		padding-left:17px;
+	}
+	#texte {
+		color:#555; /* En gris */
+		min-height:400px;
+		padding-left:25px;
+		padding-top:15px; /* Pour pas coller */
+		margin-left:165px; /* Pour etre au milieu */
+		margin-right:15px;
+		border-bottom:3px solid #d4d4d2;
+	}
+	#texte h1 {
+		font-size:1em; /* En gras */
+		margin:0;
+		font-weight:bold; /* En gras */
+		display:inline; /* Sans sauter de ligne avant et après */
+	}	
+	#footer {
+		width:100%;
+		color:#555; /* On fait gris */
+		font-size:0.7em; /* On fait joli */
+		padding-top:6px;/* On décolle le texte */
+		margin:0; /* Pour éviter la traditionnelle marge en haut et en bas de la balise p */
+		margin-left:170px; /* Pour ne pas aller dans le bleu */
+		display:inline;
+		overflow:hidden;
+		white-space:nowrap;
+	}
+	#footer a{
+		color:#444; /* On fait gris */
+		text-decoration:none; /* On enlève le soulignage */
+	}
+	.bouton {
+		background-image:url(images/menu.png); /* Le fond du bouton */
+		background-repeat:no-repeat;
+		color:#555; /* La couleur du texte */
+		font-size:0.9em; /* Sa taille */
+		font-weight:bold; /* En gras */
+		padding-top:10px; /* Pour ne pas coller au haut */
+		padding-left:5px; /* Ni a gauche */
+		width:163px; /* Pour que le bouton soit complet */
+		height:25px; /* idem */
+	}
+	.texte {
+		font-size:0.8em; /* On fait la taille */
+		margin-top:2px; /* On décale le bloc du haut */
+		border-top:1px solid #000; /* On fait une bordure (le filet) */
+	}
+	.texte ul{ 
+		display: block; 
+		margin: 1.12em 0; 
+	} 
+	.texte a{
+		font-weight:bold; /* Liens en gras */
+		text-decoration:none; /* Pas de décoration */
+		color:#333;
+	}
+	.texte a:hover{
+		text-decoration:underline;
+		color:#ccc;
+	}
+	.soustitre {
+		background-image:url(images/o.png);
+		background-repeat:no-repeat;
+		padding-left:25px;
+	}
+
+	#navigation {
+	  font-size: 10px;
+	  color: black;
+	  font-weight : bold;
+	  background-image:url(images/centre_fond.png);
+	  background-repeat:repeat-y;
+	  margin:0;
+	  padding-left:175px;
+	  padding-bottom:2px;
+	  padding-top:2px;
+	}
+	#navigation a{ 
+	  color: black;
+	  text-decoration:none;
+	}
+
+	#navigation a:hover {
+	  text-decoration: underline;
+	}
+}
+	ul , li { 
+		margin:0;
+		padding:0;
+		list-style-type:none;
+	}
+	#texte li:before,#menu a:before {
+		content: "\0000a0* ";
+	}
+#auteurnews{
+		border-top:1px dashed #000;
+		padding-top:5px;
+		margin-top:3px;
+	}
+@media handheld{
+	.finfooter{
+		display:none;
+	}
+}
+@media print{
+	body{
+		font-family:Verdana, Tahoma, Arial, Helvetica, sans-serif;
+	}
+	#menu{
+		display:none;
+	}
+	#texte{
+		text-align:justify;
+	}
+	.noprint,.finfooter{
+		display:none;
+	}
+	#footer{
+		border:1px dashed #000;
+	}
+	a{
+		font-weight:bold; /* Liens en gras */
+		text-decoration:none; /* Pas de décoration */
+		color:#000;
+	}
+
+}
+

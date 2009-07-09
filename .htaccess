@@ -1,0 +1,15 @@
+RewriteEngine on
+
+RewriteCond %{REQUEST_FILENAME} -f 
+RewriteRule "." - [skip=100] 
+RewriteCond %{REQUEST_FILENAME} -d 
+RewriteRule "." - [skip=100] 
+
+
+RewriteRule ^news\/.*([0-9]+).*$ index.php?page=news&news=$1
+
+RewriteRule ^news\/(.+)$ index.php?page=news&categorie=$1
+
+RewriteRule ^(.+)\.html$  index.php?page=$1
+
+RewriteRule ^news\.(xml|rss)$ rss.php
