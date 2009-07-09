@@ -1,4 +1,4 @@
-<? require 'header.php';
+<?php  require 'header.php';
 if($_POST['confirm']=='yes')
 	if(mysql_query('DELETE FROM '.$mysqlTablePages.' WHERE shorttitle = \''.$_POST['page'].'\''))
 		echo 'Page '.$_POST['page'].' supprimée !';

@@ -1,4 +1,4 @@
-<?
+<?php
 $reponse = mysql_query('SELECT * FROM '.$mysqlTablePages.' WHERE shorttitle = \''.$page.'\'');
 while ($donnees = mysql_fetch_array($reponse) )
 {	

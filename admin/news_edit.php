@@ -1,4 +1,4 @@
-<? require 'header.php';
+<?php  require 'header.php';
 if(isset($_POST['texte'])&&isset($_POST['news'])){
 	if(mysql_query('UPDATE '.$mysqlTableNews.' SET text=\''.mysql_real_escape_string($_POST['texte']).'\' WHERE id=\''.$_POST['news'].'\''))
 		echo 'News n&deg; '.$_POST['news'].' mise à jour correctement !';
@@ -7,7 +7,7 @@ if(isset($_POST['texte'])&&isset($_POST['news'])){
 }else{?>
 	<form action="news_edit.php" method="post">
 	<input type="hidden" name="news" value="<?echo $_POST['news']?>" />
-	<?
+	<?php 
 	include_once("fckeditor/fckeditor.php") ;
 	$oFCKeditor = new FCKeditor('texte') ;
 	$oFCKeditor->BasePath = 'fckeditor/' ;
@@ -19,6 +19,6 @@ if(isset($_POST['texte'])&&isset($_POST['news'])){
 		}
 	$oFCKeditor->Create() ;
 	?><input type="submit" value="Envoyer"/></form>
-<?}
+<?php }
 echo '<br/><a href="news_index.php">Retour page précédente</a>';
 require 'footer.php'; ?>
