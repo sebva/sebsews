@@ -5,8 +5,8 @@ echo'<?xml version="1.0" encoding="utf-8"?>'."\n"
 ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
-        <title><?echo $nom?> :: News</title>
-        <description>News de <?echo $nom?></description>
+        <title><![CDATA['<?echo $nom?> :: News]]></title>
+        <description><![CDATA['News de <?echo $nom?>]]></description>
 		<language>fr-ch</language>
         <lastBuildDate><?echo date(r);?></lastBuildDate>
         <link>http://<?echo $domaine.$repertoire;echo ($rewrite=='on') ?'/news.html':'/?page=news';?></link>
