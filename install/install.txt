@@ -14,6 +14,7 @@
 	1. Vous pouvez trouver du support par l'intermédiaire de https://sourceforge.net/projects/sebseasywebsite/support
 	2. Veillez à ce que l'interclassement MySQL soit utf8_general_ci .
 	3. Le support d'Internet Explorer 6 et inférieur n'est pas assuré.
+	4. PHP 5 est requis ! (5.3 pour l'installation automatique)
 	
 - CRÉDITS :
 	Séb's EasyWebSite a été développé entièrement par sebyx (sebyx@users.sourceforge.net).
