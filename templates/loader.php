@@ -8,6 +8,7 @@ if(!isset($_GET['css'])){
 	$newtpl -> assignTag('menu','1',array('nomCourt'=>$menuNomCourt,'nomLong'=>$menuNomLong));
 	$newtpl -> assign(array(
 		'titre'=>$title,
+		'nomsite'=>$nom,
 		'texte'=>$text,
 		'chemin'=>'http://'.$domaine.$repertoire.'/',
 		'chemintpl'=>'http://'.$domaine.$repertoire.'/templates/'.$template.'/',
