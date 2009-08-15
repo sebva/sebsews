@@ -23,6 +23,8 @@ mysql_select_db($mysqlDb);?>
 				<h2>Gestion des news</h2>
 			<?php }elseif(strpos($_SERVER["PHP_SELF"], 'page_')!==false){?>
 				<h2>Gestion des pages</h2>
+			<?php }elseif(strpos($_SERVER["PHP_SELF"], 'template_')!==false){?>
+				<h2>Changement de template</h2>
 			<?php }else{?>
 				<h2>Accueil administration</h2>
 			<?php }?>
