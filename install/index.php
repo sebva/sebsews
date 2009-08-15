@@ -56,8 +56,8 @@
 							<label>Utilisateur</label><input type="text" name="mysqlUser" /><br/>
 							<label>Mot de passe</label><input type="password" name="mysqlPassword" /><br/>
 							<label>Base de données</label><input type="text" name="mysqlDb" /><br/>
-							<label>Table pour les pages</label><input type="text" name="mysqlTablePages" value="pages" /><br/>
-							<label>Table pour les news</label><input type="text" name="mysqlTableNews" value="news" />
+							<label>Table pour les pages (inchangeable pour l'instant)</label><input type="text" name="mysqlTablePages" value="pages" readonly="readonly" /><br/>
+							<label>Table pour les news (inchangeable pour l'instant)</label><input type="text" name="mysqlTableNews" readonly="readonly" value="news" />
 						</p>
 						<p><input type="submit" value="Suite >>" /></p>
 					</form>
