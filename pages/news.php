@@ -7,7 +7,8 @@ if(isset($_GET['news'])){
 	{
 		$news=$donnees['id'];
 		$categorie = $donnees['categorie'];
-		$title.=' - '.$donnees['categorie'].' - <!--Debut titre-->'.$donnees['title'].'<!--Fin titre-->';
+		$categorieshort = $donnees['categorieshort'];
+		$title.=' - '.$donnees['categorie'].' - '.$donnees['title'];
 		$text=$donnees['text'];
 		$timestamp = strtotime($donnees['date']);
 		setlocale(LC_TIME, "fr_CH");
@@ -36,6 +37,7 @@ if(isset($_GET['news'])){
 			$text.='</em></p>';
 			$title = 'News - Tout';
 			$categorie = 'Tout';
+			$categorieshort = 'tout';
 		}	
 	}else{
 		$reponse = mysql_query('SELECT * FROM '.$mysqlTableNews.' WHERE categorieshort = \''.$_GET['categorie'].'\' ORDER BY date');
@@ -57,6 +59,7 @@ if(isset($_GET['news'])){
 			$text.='</em></p>';
 			$title = 'News - '.$donnees['categorie'];
 			$categorie = $donnees['categorie'];
+			$categorieshort = $donnees['categorieshort'];
 		}
 	}
 	if($text=='')
@@ -70,13 +73,15 @@ if(isset($_GET['news'])){
 	while ($donnees = mysql_fetch_array($reponse) )
 	{
 		$text.='<li><a href="http://'.$domaine.$repertoire;$text.=($rewrite=='on') ?'/news/':'/?page=news&amp;categorie=';$text.=$donnees['categorieshort'].'">'.$donnees['categorie'].'</a> (';
-		$reponse2 = mysql_query('SELECT categorieshort FROM '.$mysqlTableNews.' WHERE categorieshort = \''.$donnees['categorieshort'].'\' ORDER BY date');
-		$iCompt=0;
-		while ($donnees2 = mysql_fetch_array($reponse2) )
-		{
-			$iCompt++;
-		}
-		$text.=$iCompt.' news)</li>';
+		//bof Magouille pour compter les news par catégorie !!TODO: A mettre au propre !
+			$reponse2 = mysql_query('SELECT categorieshort FROM '.$mysqlTableNews.' WHERE categorieshort = \''.$donnees['categorieshort'].'\' ORDER BY date');
+			$iCompt=0;
+			while ($donnees2 = mysql_fetch_array($reponse2) )
+			{
+				$iCompt++;
+			}
+			$text.=$iCompt.' news)</li>';
+		//eof Magouille pour compter les news par catégorie
 	}
 	$iCompt=0;
 	$reponse3 = mysql_query('SELECT categorieshort FROM '.$mysqlTableNews);
@@ -89,4 +94,5 @@ if(isset($_GET['news'])){
 }
 if($text==''&&$title=='News')					
 	$erreur = 404;
+if(!isset($categorieshort)) $categorieshort=strtolower($categorie);
 	?>

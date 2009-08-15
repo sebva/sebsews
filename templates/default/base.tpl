@@ -10,20 +10,18 @@
 			<div id="header_extensible">
 				<div id="header">
 				</div>
-			</div>			
-			<p id="navigation">				
-				{$navigation}			
+			</div>
+			<p id="navigation">	
+				{$navigation}
 			</p>
 			<div id="centre">
 				<div id="menu">
 					<div class="bouton">+ Menu
 					</div>
-					<ul id="menutitre">	
-						<ul id="menutitre">
-						{menu id=1}												
+					<ul id="menutitre">
+						{menu id=1}
 							<li><a href="{$chemin}{$nomCourt}.html">{$nomLong}</a></li>
 						{/menu}
-						</ul>
 					</ul>
 				</div>
 				<div id="texte">

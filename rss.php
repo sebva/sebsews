@@ -5,14 +5,14 @@ echo'<?xml version="1.0" encoding="utf-8"?>'."\n"
 ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
-        <title><![CDATA['<?php echo $nom?> :: News]]></title>
-        <description><![CDATA['News de <?php echo $nom?>]]></description>
+        <title><![CDATA[<?php echo $nom?> :: News]]></title>
+        <description><![CDATA[News de <?php echo $nom?>]]></description>
 		<language>fr-ch</language>
         <lastBuildDate><?php echo date(r);?></lastBuildDate>
         <link>http://<?php echo $domaine.$repertoire;echo ($rewrite=='on') ?'/news.html':'/?page=news';?></link>
 		<atom:link href="http://<?php echo $domaine.$_SERVER['REQUEST_URI']?>" rel="self" type="application/rss+xml" />
 		<image>
-			<title><?php echo $nom?> :: News</title>
+			<title><![CDATA[<?php echo $nom?> :: News]]></title>
 			<url>http://<?php echo $domaine.$repertoire?>/images/rsslogo.png</url>
 			<link>http://<?php echo $domaine.$repertoire;echo ($rewrite=='on') ?'/news.html':'/?page=news';?></link>
 			<width>144</width>

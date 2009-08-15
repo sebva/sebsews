@@ -14,14 +14,10 @@ mysql_select_db($mysqlDb);?>
 		<link rel="Shortcut Icon" href="http://<?php echo $domaine.$repertoire?>/favicon.png" />
 	</head>
 	<body>
-	<div id="conteneur">
-		<div id="header_text"><h1>Console d'administration</h1></div>
-			<div id="header_extensible">
-				
-					<div id="header">				
-					</div>				
-				</div>
-				
+	<div id="conteneur">		
+			<div id="header_extensible">				
+				<div id="header"></div>				
+			</div>				
 			<div id="contenu">
 			<?php if(strpos($_SERVER["PHP_SELF"], 'news_')!==false){?>
 				<h2>Gestion des news</h2>

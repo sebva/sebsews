@@ -1,5 +1,4 @@
-<?php require('config.php'); ?>
-<meta http-equiv="Content-Type" content="<?php echo $type?>; charset=utf-8" />
+<?php require('config.php'); ?><meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <?php
 if ($googleWebmasterToolsMetaTag !=''){?><meta name="verify-v1" content="<?php echo $googleWebmasterToolsMetaTag.'" />';}?>
 		<link rel="icon" href="http://<?php echo $domaine.$repertoire?>/favicon.png" />
@@ -11,7 +10,7 @@ if ($googleWebmasterToolsMetaTag !=''){?><meta name="verify-v1" content="<?php e
 			if (window !=top ) {top.location=window.location;}
 		   //-->
 		</script>
-		<?php if(!in_array($_SERVER['REMOTE_ADDR'], $googleAnalyticsBlacklist) && $erreur == 200 && $googleAnalyticsCode != ''){?>
+		<?php if($erreur == 200 && $googleAnalyticsCode != ''){?>
 		<!--Google Analytics-->
 		<script type="text/javascript">
 			var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
