@@ -12,6 +12,7 @@ if(!isset($_GET['css'])){
 		'texte'=>$text,
 		'chemin'=>'http://'.$domaine.$repertoire.'/',
 		'chemintpl'=>'http://'.$domaine.$repertoire.'/templates/'.$template.'/',
+		'cheminimages'=>'http://'.$domaine.$repertoire.'/templates/'.$template.'/images/',
 		'navigation'=>$navigation));
 	$newtpl -> view();
 }
