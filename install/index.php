@@ -144,6 +144,7 @@ CURRENT_TIMESTAMP , '1', 'sebyx', 'Bienvenue dans Seb\'s EasyWebSite !', '<p>Seb
   `title` mediumtext NOT NULL,
   `text` text NOT NULL,
   `menuseul` tinyint(1) NOT NULL,
+  `images` text NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `shorttitle` (`shorttitle`(256))
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3")==true) echo '<span style="color:green;">OK !</span>';
@@ -155,11 +156,12 @@ CURRENT_TIMESTAMP , '1', 'sebyx', 'Bienvenue dans Seb\'s EasyWebSite !', '<p>Seb
 `date` ,
 `title` ,
 `text` ,
-`menuseul`
+`menuseul`,
+`images`
 )
 VALUES (
 1 , 'index',
-CURRENT_TIMESTAMP , 'Accueil', '<p>Bienvenue dans <strong>Séb\'s</strong> <span style=\"color: rgb(0, 0, 255);\"><strong>EasyWebSite</strong></span> !</p>', '0'
+CURRENT_TIMESTAMP , 'Accueil', '<p>Bienvenue dans <strong>Séb\'s</strong> <span style=\"color: rgb(0, 0, 255);\"><strong>EasyWebSite</strong></span> !</p>', '0', ''
 )"))echo '<span style="color:green;">Accueil OK ! </span>';
 							else echo '<span style="color:red;">Erreur !</span>';
 				if(mysql_query("INSERT INTO `".$mysqlDb."`.`".$mysqlTablePages."` (
@@ -168,11 +170,12 @@ CURRENT_TIMESTAMP , 'Accueil', '<p>Bienvenue dans <strong>Séb\'s</strong> <span
 `date` ,
 `title` ,
 `text` ,
-`menuseul`
+`menuseul`,
+`images`
 )
 VALUES (
 2 , 'news',
-CURRENT_TIMESTAMP , 'News', 'News', '1'
+CURRENT_TIMESTAMP , 'News', 'News', '1', ''
 )"))echo '<span style="color:green;">News OK ! </span>';
 							else echo '<span style="color:red;">Erreur !</span>'; ?><br/>
 							
