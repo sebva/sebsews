@@ -10,7 +10,7 @@
 		echo '<option value="'.$donnees['shorttitle'].'">'.stripslashes($donnees['title']).'</option>';
 	}?>
 	</select><br/>
-	<input type="submit" value="&Eacute;diter la page"/></form></li>	
+	<input type="submit" value="&Eacute;diter la page"/></form></li>
 	
 	<!--Créer-->
 	<li><a href="page_create.php">Créer une page</a></li>
@@ -25,7 +25,10 @@
 	}?>
 	</select><br/>
 	<label>&Ecirc;tes-vous vraiement et absolument s&ucirc;r de vouloir supprimer une page (cette action est irréversible) ?&nbsp;</label><input type="checkbox" name="confirm" value="yes" /><br/>
-	<input type="submit" value="Supprimer la page"/></form></li>	
+	<input type="submit" value="Supprimer la page"/></form></li>
+	
+	<!--Ajouter image-->
+	<li><a href="page_image.php">Ajouter une/des image(s) à une page</a></li>
 	
 	<!--News-->
 	<li><a href="index.php">Retour accueil administration</a></li>

@@ -5,8 +5,8 @@
 		sebyx@users.sourceforge.net
 
 - INSTALLATION :
-	0. !!! PROTÉGEZ LE REPERTOIRE admin/, SANS QUOI N'IMPORTE QUI PEUT CRÉER/MODIFIER/SUPPRIMER DES PAGES ET NEWS !!!
-	1. Ouvrez le site web dans votre navigateur, l'installation devrait débuter. Si ce n'est pas le cas, naviguez vers le répertoire install.
+	0. !!! PROTÉGEZ LE REPERTOIRE admin/, SANS QUOI N'IMPORTE QUI PEUT CRÉER/MODIFIER/SUPPRIMER DES PAGES ET NEWS VOIRE CAUSER DES DÉGATS !!!
+	1. Ouvrez le site web dans votre navigateur, l'installation devrait débuter. Si ce n'est pas le cas, naviguez vers le répertoire install et suivez les instructions.
 	2. Supprimez ou renommez le répertoire install.
 	3. Customisez votre site ! La documentation nécessaire au moteur de template se trouve dans le répertoire templates.
 		
