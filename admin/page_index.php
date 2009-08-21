@@ -21,7 +21,7 @@
 	$reponse = mysql_query('SELECT title,shorttitle FROM '.$mysqlTablePages.' ORDER BY id');
 	while ($donnees = mysql_fetch_array($reponse) )
 	{
-		if($donnees['shorttitle']!='news'&&$donnees['shorttitle']!='accueil') echo '<option value="'.$donnees['shorttitle'].'">'.stripslashes($donnees['title']).'</option>';
+		if($donnees['shorttitle']!='news'&&$donnees['shorttitle']!='index') echo '<option value="'.$donnees['shorttitle'].'">'.stripslashes($donnees['title']).'</option>';
 	}?>
 	</select><br/>
 	<label>&Ecirc;tes-vous vraiement et absolument s&ucirc;r de vouloir supprimer une page (cette action est irréversible) ?&nbsp;</label><input type="checkbox" name="confirm" value="yes" /><br/>
