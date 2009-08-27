@@ -24,7 +24,7 @@
 					<h3>Configuration générale</h3>
 					<form action="<?php echo preg_replace('#^(.*)\?.*$#',"$1",$_SERVER["REQUEST_URI"]); ?>?step=2" method="post">
 						<p>
-							<label>Répertoire dans lequel Séb's EasyWebSite est situé (Laisser vide si à la racine)</label><input type="text" name="repertoire" value="<?php echo preg_replace('#^(/.*)/install.*$#',"$1",$_SERVER["REQUEST_URI"]) ?>" /><br/>
+							<label>Répertoire dans lequel Séb's EasyWebSite est situé (Laisser vide si à la racine)</label><input type="text" name="repertoire" value="<?php $tempChemin = preg_replace('#^(/.*)/install.*$#',"$1",$_SERVER["REQUEST_URI"]); if($tempChemin == '/install/') $tempChemin = ''; echo $tempChemin; ?>" /><br/>
 							<label>Nom du template à utiliser (dossier situé dans /templates)</label>
 							<select name="template">
 								<? 	$rep = "../templates/";
