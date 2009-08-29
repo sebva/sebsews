@@ -30,7 +30,7 @@
 								<? 	$rep = "../templates/";
 									$dir = opendir($rep);
 									while ($f = readdir($dir)) {
-									   if(is_dir($rep.$f) && !preg_match('#^(_|\.)#' ,$f)) {
+									   if(is_dir($rep.$f) && !preg_match('#^(_|\.|lightbox)#' ,$f)) {
 										  echo '<option value="'.$f.'">'.$f.'</option>';
 									   }
 									}
