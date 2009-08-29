@@ -5,6 +5,11 @@ if ($googleWebmasterToolsMetaTag !=''){?><meta name="verify-v1" content="<?php e
 		<link rel="Shortcut Icon" href="http://<?php echo $domaine.$repertoire?>/favicon.png" />
         <link rel="stylesheet" type="text/css" media="all" href="http://<?php echo $domaine.$repertoire.'/templates/loader.php?css';?>" />		
 		<link rel="alternate" type="application/rss+xml" title="<?php echo $nom?> :: News" href="http://<?php echo $domaine.$repertoire;echo ($rewrite=='on') ?'/news.xml':'/rss.php';?>" />
+		<!--Lightbox-->
+		<script type="text/javascript" src="http://<?php echo $domaine.$repertoire.'/templates/lightbox/js/prototype.js'; ?>"></script>
+		<script type="text/javascript" src="http://<?php echo $domaine.$repertoire.'/templates/lightbox/js/scriptaculous.js?load=effects,builder'; ?>"></script>
+		<script type="text/javascript" src="http://<?php echo $domaine.$repertoire.'/templates/lightbox/js/lightbox.js'; ?>"></script>
+		<link rel="stylesheet" href="http://<?php echo $domaine.$repertoire.'/templates/loader.php?css=lightbox'; ?>" type="text/css" media="screen" />
 		<!--Sortie des Frames--><script type="text/javascript">
 			<!--
 			if (window !=top ) {top.location=window.location;}
