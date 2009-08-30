@@ -21,14 +21,11 @@ CURRENT_TIMESTAMP , '".$_POST['title']."', '".$_POST['text']."', '".$_POST['menu
 	<p><label>Nom court de la page (sans espaces ni accents ou caractères spéciaux) </label><input type="text" name="shorttitle"/><br/>
 	<label>Nom complet de la page</label><input type="text" name="title"/><br/>
 	<label>Entrée seulement pour menu (sans texte) <strong>!!! Un fichier portant le nom court et l'extension .php doit être placé dans le répertoire pages !!!</strong></label><input type="checkbox" name="menuseul" /></p>
-	<?php 
-	include_once("fckeditor/fckeditor.php") ;
-	$oFCKeditor = new FCKeditor('text') ;
-	$oFCKeditor->BasePath = 'fckeditor/' ;
-	$oFCKeditor->Height = 420;
-	$oFCKeditor->Value = '';
-	$oFCKeditor->Create() ;
-	?><p><input type="submit" value="Envoyer"/></p></form>
+	<textarea name="text"></textarea>
+	<script type="text/javascript">
+		CKEDITOR.replace( 'text' );
+	</script>
+	<p><input type="submit" value="Envoyer"/></p></form>
 <?php }
 echo '<br/><a href="page_index.php">Retour page précédente</a>';
 require 'footer.php'; ?>

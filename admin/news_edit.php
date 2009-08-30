@@ -7,18 +7,15 @@ if(isset($_POST['texte'])&&isset($_POST['news'])){
 }else{?>
 	<form action="news_edit.php" method="post">
 	<input type="hidden" name="news" value="<?echo $_POST['news']?>" />
-	<?php 
-	include_once("fckeditor/fckeditor.php") ;
-	$oFCKeditor = new FCKeditor('texte') ;
-	$oFCKeditor->BasePath = 'fckeditor/' ;
-	$oFCKeditor->Height = 420;
+	<textarea name="texte"><?php 	
 	$reponse = mysql_query('SELECT * FROM '.$mysqlTableNews.' WHERE id = \''.$_POST['news'].'\'');
-		while ($donnees = mysql_fetch_array($reponse) )
-		{
-			$oFCKeditor->Value =stripslashes($donnees['text']);
-		}
-	$oFCKeditor->Create() ;
-	?><input type="submit" value="Envoyer"/></form>
+	$donnees = mysql_fetch_array($reponse);
+	echo stripslashes($donnees['text']);
+	?></textarea>
+	<script type="text/javascript">
+		CKEDITOR.replace( 'texte' );
+	</script>
+	<input type="submit" value="Envoyer"/></form>
 <?php }
 echo '<br/><a href="news_index.php">Retour page précédente</a>';
 require 'footer.php'; ?>

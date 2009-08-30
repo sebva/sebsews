@@ -12,6 +12,7 @@ mysql_select_db($mysqlDb);?>
 		<link rel="stylesheet" type="text/css" href="style.css" media="all" />
 		<link rel="icon" href="http://<?php echo $domaine.$repertoire?>/favicon.png" />
 		<link rel="Shortcut Icon" href="http://<?php echo $domaine.$repertoire?>/favicon.png" />
+		<script type="text/javascript" src="ckeditor/ckeditor.js"></script>
 	</head>
 	<body>
 	<div id="conteneur">		
