@@ -1,1 +1,1 @@
-<?php $template='dirtylicious'; ?>
+<?php $template='default'; ?>

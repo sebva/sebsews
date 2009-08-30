@@ -28,7 +28,7 @@
 	<input type="submit" value="Supprimer la page"/></form></li>
 	
 	<!--Ajouter image-->
-	<li><a href="page_image.php">Ajouter une/des image(s) à une page</a></li>
+	<li><a href="page_image.php">Ajouter/supprimer des images à une page</a></li>
 	
 	<!--News-->
 	<li><a href="index.php">Retour accueil administration</a></li>

@@ -13,7 +13,7 @@ echo'<?xml version="1.0" encoding="utf-8"?>'."\n"
 		<atom:link href="http://<?php echo $domaine.$_SERVER['REQUEST_URI']?>" rel="self" type="application/rss+xml" />
 		<image>
 			<title><![CDATA[<?php echo $nom?> :: News]]></title>
-			<url>http://<?php echo $domaine.$repertoire?>/images/rsslogo.png</url>
+			<url>http://<?php echo $domaine.$repertoire?>/rsslogo.png</url>
 			<link>http://<?php echo $domaine.$repertoire;echo ($rewrite=='on') ?'/news.html':'/?page=news';?></link>
 			<width>144</width>
 			<height>53</height>
