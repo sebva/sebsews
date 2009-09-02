@@ -18,8 +18,11 @@
 				
 			<div id="contenu">
 				<h2>Installation</h2>
-				
-				<?php if($_GET['step']==1||!isset($_GET['step'])){ ?>
+				<?php if(!isset($_GET['step'])) { ?>
+					<p>Bienvenue dans Séb's EasyWebSite !<br/>Veuillez lire ces instructions avant de commencer l'installation, merci.</p>
+					<p><textarea rows="35" readonly="readonly" style="width:100%;"><?php include('install.txt') ?></textarea></p>
+					<p><a href="index.php?step=1">Commencer l'installation !</a></p>
+				<?php } else if($_GET['step']==1){ ?>
 					<p>Bienvenue dans Séb´s EasyWebSite !<br/>Pour commencer, nous avons besoin de quelques renseignements :</p>
 					<h3>Configuration générale</h3>
 					<form action="<?php echo preg_replace('#^(.*)\?.*$#',"$1",$_SERVER["REQUEST_URI"]); ?>?step=2" method="post">
