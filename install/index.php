@@ -132,7 +132,7 @@ Remplissage de la table des news...
 )
 VALUES (
 NULL ,
-CURRENT_TIMESTAMP , '1', 'sebyx', 'Bienvenue dans Seb\'s EasyWebSite !', '<p>Seb\'s EasyWebSite est un système PHP/MySQL vous facilitant le gestion de votre site web !</p>\r\n<p>Il propose un module de news avec flux RSS ainsi qu\'un système de gestion des pages. L\'édition se fait à l\'aide de la console d\'administration, laquelle contient FCKEditor, un éditeur WYSIWYG.</p>\r\n<p>Le système inclut aussi quelques services Google préconfigurés.</p>\r\n<p>Bon Webmastering !</p>' , 'Général' , 'general'
+CURRENT_TIMESTAMP , '1', 'sebyx', 'Bienvenue dans Seb\'s EasyWebSite !', '<p>Seb\'s EasyWebSite est un système PHP/MySQL vous facilitant le gestion de votre site web !</p>\r\n<p>Il propose un module de news avec flux RSS ainsi qu\'un système de gestion des pages avec gestion d\'images. L\'édition se fait à l\'aide de la console d\'administration, laquelle contient CKEditor, un éditeur WYSIWYG.</p>\r\n<p>Le système inclut aussi quelques services Google préconfigurés.</p>\r\n<p>Bon Webmastering !</p>' , 'Général' , 'general'
 )")) echo '<span style="color:green;">OK !</span>';
 	else echo '<span style="color:red;">Erreur !</span>'; ?> <br/>
 	Création de la table des pages...

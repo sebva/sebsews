@@ -1,1 +1,1 @@
-<?php $template='default'; ?>
+<?php $template='bitter-sweet'; ?>
