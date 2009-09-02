@@ -26,14 +26,20 @@ switch($_GET['action'])
 		
 	case 'wipe':
 		//RàZ
-			echo '<p>Suppression du fichier de configuration...';
-			if(unlink('../config.php'))
-				echo '<span style="color:green;">OK !</span>
-						</p><p>Vous devez maintenant <a href="../install/">redémarrer l\'installation</a> pour continuer';
-			else
-				echo '<span style="color:red;">Erreur !</span>';
-			echo '</p>';
-			exit;
+			echo '<p>';
+			if($_POST['confirm'] === 1) {
+				echo 'Suppression du fichier de configuration...';
+				if(unlink('../config.php'))
+					echo '<span style="color:green;">OK !</span>
+							</p><p>Vous devez maintenant <a href="../install/">redémarrer l\'installation</a> pour continuer';
+				else
+					echo '<span style="color:red;">Erreur !</span>';
+				echo '</p>';
+				exit;
+			} else {
+				echo 'Vous n\'avez pas confirmer l\'action ! Arrêt <br/><span style="color:red;">Erreur !</span></p>';
+				echo '<p><a href="settings.php">Retour aux paramètres</a></p>';
+			}
 		//Fin RàZ
 		break;
 	case 'template':
