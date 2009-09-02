@@ -2,7 +2,7 @@
 echo '<p>';
 if(!isset($_POST['page'])&&!isset($_FILES['image'])) { ?>	
 		Vous pouvez joindre des images pour chaque page créée<br/>
-		<strong>Attention : pour que la fonction soit possible, il faut que l'écriture soit activée dans le répertoire upload/ (chmod 755 ou 777)</strong><br/>Les Jpeg, Gif et Png sont acceptés<br />Il n'est pour l'instant pas possible de supprimer des images jointes via l'interface graphique (par édition directe de MySQL OK)</p>
+		<strong>Attention : pour que la fonction soit possible, il faut que l'écriture soit activée dans le répertoire upload/ (chmod 755 ou 777)</strong><br/>Les Jpeg, Gif et Png sont acceptés</p>
 		<p>
 		<form action="image_add.php" method="post" enctype="multipart/form-data"><label>Page ciblée : </label><select name="page">
 		<?php 
