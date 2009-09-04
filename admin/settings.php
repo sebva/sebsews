@@ -18,7 +18,7 @@ switch($_GET['action'])
 	case 'config':
 		//Configuration ?>
 			<ul>
-				<li><form action="settings.php?action=wipe" method="post">Remettre à zéro la configuration du site [Je suis sûr (irréversible) :<input type="checkbox" value="1" name="confirm" />] <input type="submit" value="Remise à zéro" /></form></li>
+				<li><form action="settings.php?action=wipe" method="post">Remettre à zéro la configuration du site [Je suis sûr (irréversible) :<input type="checkbox" value="ok" name="confirm" />] <input type="submit" value="Remise à zéro" /></form></li>
 				<li><a href="settings.php">Retour aux paramètres</a></li>
 			</ul> <?php
 		//Fin configuration
@@ -27,7 +27,7 @@ switch($_GET['action'])
 	case 'wipe':
 		//RàZ
 			echo '<p>';
-			if($_POST['confirm'] === 1) {
+			if($_POST['confirm'] == 'ok') {
 				echo 'Suppression du fichier de configuration...';
 				if(unlink('../config.php'))
 					echo '<span style="color:green;">OK !</span>
@@ -37,7 +37,7 @@ switch($_GET['action'])
 				echo '</p>';
 				exit;
 			} else {
-				echo 'Vous n\'avez pas confirmer l\'action ! Arrêt <br/><span style="color:red;">Erreur !</span></p>';
+				echo 'Vous n\'avez pas confirmé l\'action ! Arrêt <br/><span style="color:red;">Erreur !</span></p>';
 				echo '<p><a href="settings.php">Retour aux paramètres</a></p>';
 			}
 		//Fin RàZ

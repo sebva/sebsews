@@ -42,7 +42,7 @@
 							<br/>
 							<label>Nom du site</label><input type="text" name="nom" /><br/>
 							<label>Domaine des adresses e-mails (ce qui doit être ajouté après le @)</label><input type="text" name="emailDomaine" value="<?php echo $_SERVER['HTTP_HOST'] ?>" /><br/>
-							<label>URL Rewriting (il est conseillé de l'activer, cependant certains serveurs ne le supportent pas)</label><select name="rewrite"><option value="on" selected="selected">Activé</option><option value="off">Desactivé</option></select>
+							<label>URL Rewriting (il est conseillé de l'activer, cependant certains serveurs ne le supportent pas. De plus vous aurez à changer manuellement les menus créés dans les templates.)</label><select name="rewrite"><option value="on" selected="selected">Activé</option><option value="off">Desactivé</option></select>
 						</p>
 						<p><input type="submit" value="Suite >>" /></p>
 					</form>
