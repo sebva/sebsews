@@ -15,7 +15,7 @@ if ($googleWebmasterToolsMetaTag !=''){?><meta name="verify-v1" content="<?php e
 			if (window !=top ) {top.location=window.location;}
 		   //-->
 		</script>
-		<?php if($erreur == 200 && $googleAnalyticsCode != ''){?>
+		<?php if($googleAnalyticsCode != ''){?>
 		<!--Google Analytics-->
 		<script type="text/javascript">
 			var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
