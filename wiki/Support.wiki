@@ -1,4 +1,5 @@
 #summary How to have support ?
+#labels Featured,Phase-Support
 
 = Support =
 
