@@ -1,5 +1,5 @@
 <?php
-function getCache($fonction, $duree = 120)
+function Cache($fonction, $duree = 120)
 {
 	$file = '_cache/'.$fonction.'.cache.html';
 
