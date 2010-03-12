@@ -1,6 +1,7 @@
 <?php
 if(file_exists('config.php')){
 	require('config.php');
+	require('func/cache.php');
 	//bof Prérequis	
 		$page=$_GET['page'];	//$page est le nom court de la page
 		if($page=='') $page='index';	//La page par défaut est index
