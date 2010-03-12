@@ -1,0 +1,12 @@
+#summary Installation guide
+#labels Phase-Deploy,Featured
+
+= Installation =
+
+  # _This is a temporary step until login control developement is finished :_ *Protect the admin/ folder* using your web server (like .htacess on Apache)
+  # *Open the web site in your browser*, the installation will start automatically. If not, open the install/ folder in your browser.
+  # Follow the instructions that are given and provide the necessary informations.
+  # *Delete, rename and/or protect* the install/ folder, otherwise anyone could reinstall your website !
+  # Be creative ! You can create your own template, the template engine documentation is provided in the templates/ folder.
+----
+_If you're encountering problems, please contact the [Support]_
