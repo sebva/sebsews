@@ -1,5 +1,0 @@
-Pour créer un template, le fichier de base à charger doit s'appeler "base.tpl", la feuille de style "style.css" et le dossier des images "images".
-N'oubliez pas d'inclure head.php !
-
-Regardez le fichier loader.php pour voir les variables disponibles.
-N'oubliez pas de lire la documentation de LiteTemplate.
