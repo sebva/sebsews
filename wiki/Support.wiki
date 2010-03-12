@@ -1,0 +1,11 @@
+#summary How to have support ?
+
+= Support =
+
+== Bugs and enhancements ==
+
+Bugs and enhacements requests can be addressed using the [http://code.google.com/p/sebsews/issues/list Issues] tab
+
+== Support requests ==
+
+You can obtain support by [http://twitter.com/sebyx31 Twitter (sebyx31)]
