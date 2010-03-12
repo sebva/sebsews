@@ -1,0 +1,9 @@
+#summary What's next ?
+#labels Phase-QA
+
+= What's next ? =
+
+  * Login control system (with multi-accounts)
+  * Cache system for faster loading time
+  * New design for the admin board
+  * i18n
