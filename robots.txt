@@ -1,0 +1,6 @@
+User-Agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /func/
+Disallow: /_install/
+Disallow: /phpinfo.php
