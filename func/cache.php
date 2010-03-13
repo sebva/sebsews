@@ -1,6 +1,7 @@
 <?php
 function Cache($fonction, $duree = 120)
 {
+	@mkdir('_cache');
 	$file = '_cache/'.$fonction.'.cache.html';
 
 	if(!file_exists($file))
