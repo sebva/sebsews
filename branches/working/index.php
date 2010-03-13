@@ -1,8 +1,19 @@
 <?php
+/**
+ * Autochargement de classes
+ * @param class $classe
+ */
+function chargerClasse ($classe)
+{
+	require 'classes/'.strtolower($classe).'.class.php';
+}
+spl_autoload_register ('chargerClasse');
+
+
 if(file_exists('config.php')){
-	require('config.php');
-	require('func/cache.php');
-	//bof Prérequis	
+	$config = new Config();
+	
+	//bof Prérequis
 		$page=$_GET['page'];	//$page est le nom court de la page
 		if($page=='') $page='index';	//La page par défaut est index
 		$erreur = 200; //Aucune erreur par défaut
@@ -10,13 +21,13 @@ if(file_exists('config.php')){
 			mysql_connect($mysqlHost, $mysqlUser, $mysqlPassword);
 			mysql_set_charset ('UTF8');
 			mysql_select_db($mysqlDb);
-		//eof Connexion à MySQL	
+		//eof Connexion à MySQL
 	//eof Prérequis
 
-	//bof Génération du texte dont menu	
-		include('func/menu.php');	//Inclusion de la fonction du menu	
+	//bof Génération du texte dont menu
+		include('func/menu.php');	//Inclusion de la fonction du menu
 		//bof Texte
-			if(file_exists('pages/'.$page.'.php'))					
+			if(file_exists('pages/'.$page.'.php'))
 				require('pages/'.$page.'.php');
 			else
 				require('func/texte.php');
