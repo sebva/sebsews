@@ -16,7 +16,7 @@ class Cache
 	
 	public function __construct($file, $duration)
 	{
-		$this->file = __FILE__."../_cache/$file.cache.html";
+		$this->file = "../_cache/$file.cache.html";
 		$this->duration = $duration;
 	}
 	
@@ -35,6 +35,7 @@ class Cache
 	 */
 	public function isExpired()
 	{
+		if(!file_exists($file)) return true;
 		if($this->getAge() > $this->duration)
 			return true;
 		else
@@ -48,7 +49,7 @@ class Cache
 	 */
 	public function setCache($text)
 	{
-		@mkdir(__FILE__.'../_cache');
+		@mkdir('../_cache');
 	
 		if(file_put_contents($this->file, $text))
 			return true;
