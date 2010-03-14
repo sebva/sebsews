@@ -35,7 +35,7 @@ class Cache
 	 */
 	public function isExpired()
 	{
-		if(!file_exists($file)) return true;
+		if(!file_exists($this->file)) return true;
 		if($this->getAge() > $this->duration)
 			return true;
 		else
@@ -63,7 +63,7 @@ class Cache
 	 */
 	public function getCache()
 	{
-		if(file_exists($file))
+		if(file_exists($this->file))
 			return file_get_contents($this->file);
 		else
 			return false;
