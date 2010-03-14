@@ -51,10 +51,7 @@ class Cache
 	{
 		@mkdir('../_cache');
 	
-		if(file_put_contents($this->file, $text))
-			return true;
-		else
-			return false;
+		return(file_put_contents($this->file, $text));
 	}
 	
 	/**
@@ -67,6 +64,15 @@ class Cache
 			return file_get_contents($this->file);
 		else
 			return false;
+	}
+	
+	/**
+	 * Deletes the cached file
+	 * @return bool True if it worked, otherwise false
+	 */
+	public function delCache()
+	{
+		return(@unlink($this->file));
 	}
 }
 ?>
