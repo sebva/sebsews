@@ -29,7 +29,9 @@ class Menu
 			require('db.class.php');
 			$db = new DB();
 			$reponse = $db->query('SELECT title,shorttitle FROM '.$db->dbConfig['tables']['pages'].' ORDER BY id');
-			
+			unset($db);
+			$this->cache->setCache(serialize($reponse));
+			return $reponse;
 		}
 	}
 }
