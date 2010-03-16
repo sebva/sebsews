@@ -12,32 +12,45 @@ spl_autoload_register ('chargerClasse');
 
 if(file_exists('config.php')){
 	$config = new Config();
+	$configOut = $config->config;
+	unset($config);
+	$title = $configOut['nom'];
+	$domaine = $_SERVER['HTTP_HOST'];
+	$repertoire = $configOut['repertoire'];
+	unset($configOut);
+	require('template.php');
 	
 	//bof Prérequis
 		$page=$_GET['page'];	//$page est le nom court de la page
 		if($page=='') $page='index';	//La page par défaut est index
-		$erreur = 200; //Aucune erreur par défaut
-		//bof Connexion à MySQL
-			mysql_connect($mysqlHost, $mysqlUser, $mysqlPassword);
-			mysql_set_charset ('UTF8');
-			mysql_select_db($mysqlDb);
-		//eof Connexion à MySQL
 	//eof Prérequis
 
 	//bof Génération du texte dont menu
-		include('func/menu.php');	//Inclusion de la fonction du menu
+		$menu = new Menu();
+		$menuOut = $menu->getMenu();
+		unset($menu);
+		
+		foreach($menuOut as $value)
+		{
+			$menuNomCourt[]=$value['shorttitle'];
+			$menuNomLong[]=$value['title'];
+		}
+		
 		//bof Texte
-			if(file_exists('pages/'.$page.'.php'))
-				require('pages/'.$page.'.php');
-			else
-				require('func/texte.php');
+			$textOut = Text::getText($page);
+			$text = $textOut['text'];
+			$title .= ' :: '.$textOut['title'];
+			unset($textOut);
+			
+			$gallery = new Gallery($page);
+			$text.=$gallery->getHtml(4);
+			unset($gallery);
 		//eof Texte
 		
-		/*Navigation : */ require('func/navigation.php');
+		require('func/navigation.php');
 	//eof Génération du texte dont menu
 
 	//bof Fin de page
-		mysql_close();	//Fermeture de la connexion à MySQL
 		$text=stripslashes($text);	//On retire d'éventuels \' venant de MySQL
 		$title=stripslashes($title);
 		$text=preg_replace('#\$domaine#', $domaine, $text);
@@ -51,11 +64,6 @@ if(file_exists('config.php')){
 			exit;
 		}
 	//eof Redirection si faux domaine
-
-	//bof Gestion des erreurs HTTP
-		if($erreur!=200)
-			require('func/erreur.php');
-	//eof Gestion des erreurs HTTP
 
 	//bof Headers HTTP
 		$type = 'text/html';

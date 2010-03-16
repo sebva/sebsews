@@ -3,21 +3,25 @@ class Text
 {
 	public static function getText($page)
 	{
-		require('cache.class.php');
-		$cache = new Cache($page, Cache::NORMAL);
-		
-		if($cache->isExpired())
-		{
-			require('db.class.php');
-			
-			$db = new DB();
-			$reponse = $db->query('SELECT text FROM '.$db->dbConfig['tables']['pages'].' WHERE shorttitle = \''.$page.'\'');
-			
-			$cache->setCache($reponse[0]['text']);
-			return $reponse[0]['text'];
-		}
+		if(file_exists('pages/'.$page.'.php'))
+			require('pages/'.$page.'.php');
 		else
-			return $cache->getCache();
+		{
+			$cache = new Cache($page.'.text', Cache::NORMAL);
+			
+			if($cache->isExpired())
+			{
+				$db = new DB();
+				$reponse = $db->query('SELECT text,title FROM '.$db->dbConfig['tables']['pages'].' WHERE shorttitle = \''.$page.'\'');
+				
+				$return['text'] = $reponse[0]['text'];
+				$return['title'] = $reponse[0]['title'];
+				$cache->setCache(serialize($return));
+				return $return;
+			}
+			else
+				return unserialize($cache->getCache());
+		}
 	}
 }
 ?>
