@@ -16,7 +16,7 @@ class Cache
 	
 	public function __construct($file, $duration)
 	{
-		$this->file = "../_cache/$file.cache.html";
+		$this->file = "_cache/$file.cache.html";
 		$this->duration = $duration;
 	}
 	
@@ -49,7 +49,7 @@ class Cache
 	 */
 	public function setCache($text)
 	{
-		@mkdir('../_cache');
+		@mkdir('_cache');
 	
 		return(file_put_contents($this->file, $text));
 	}

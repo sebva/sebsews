@@ -9,7 +9,6 @@ class Menu
 	private $cache;
 	public function __construct()
 	{
-		require('cache.class.php');
 		$this->cache = new Cache('menu', Cache::LONG);
 	}
 	
@@ -26,7 +25,6 @@ class Menu
 		}
 		else
 		{
-			require('db.class.php');
 			$db = new DB();
 			$reponse = $db->query('SELECT title,shorttitle FROM '.$db->dbConfig['tables']['pages'].' ORDER BY id');
 			unset($db);

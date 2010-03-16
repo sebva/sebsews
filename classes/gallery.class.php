@@ -10,12 +10,10 @@ class Gallery
 	
 	public function __construct($page)
 	{
-		require('cache.class.php');
 		$this->cache = new Cache($page.'.images', Cache::NORMAL);
 		
 		if($this->cache->isExpired())
 		{
-			require('db.class.php');
 			$db = new DB();
 			$reponse = $db->query('SELECT images FROM '.$db->dbConfig['tables']['pages'].' WHERE shorttitle="'.$page.'"');
 			if(!empty($reponse[0]['images']))
