@@ -1,4 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<configuration version="1.0" xmlns="config.dtd">
-	<item name="title" type="string">Title</item>
+<configuration version="1.0">
+	<!-- General config  -->
+	<item name="title">Title</item>
+	
+	<!-- Database config -->
+	<item name="dbEngine">mysql</item>
+	<item name="dbHost">localhost</item>
+	<item name="dbUser">root</item>
+	<item name="dbPasswd"></item>
+	<item name="dbDb">test</item>
+	<array name="dbTables">
+		<entry name="pages">pages</entry>
+		<entry name="news">news</entry>
+	</array>
 </configuration>
