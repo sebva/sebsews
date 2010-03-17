@@ -1,4 +1,8 @@
 <?php
+/**
+ * @deprecated
+ */
+
 if(!isset($_GET['css'])){
 	require_once('litetemplate.class.php');
 	$newtpl = new liteTemplate();
@@ -18,7 +22,7 @@ if(!isset($_GET['css'])){
 }
 else if($_GET['css']=='lightbox'){
 	header('Content-Type:text/css');
-	require_once('litetemplate.class.php');	
+	require_once('litetemplate.class.php');
 	$newtpl = new liteTemplate();
 	$newtpl -> cache_activate = true;
 	$newtpl -> cache_compression = true;
@@ -29,7 +33,7 @@ else if($_GET['css']=='lightbox'){
 }
 else{
 	header('Content-Type:text/css');
-	require_once('litetemplate.class.php');	
+	require_once('litetemplate.class.php');
 	$newtpl = new liteTemplate();
 	$newtpl -> cache_activate = true;
 	$newtpl -> cache_compression = true;
@@ -44,5 +48,5 @@ else{
 foreach($newtpl -> error as $cle=>$valeur)
     {
     echo $cle.' : '.$valeur.'<br>';
-    } 
+    }
 ?>
