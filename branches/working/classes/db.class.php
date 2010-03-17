@@ -30,7 +30,7 @@ class DB
 	 */
 	private function connect()
 	{
-		mysql_connect($this->dbConfig['host'], $this->dbConfig['user'], $this->dbConfig['passwd']);
+		mysql_connect($this->dbConfig['host'], $this->dbConfig['user'], $this->dbConfig['passwd']) or die(mysql_error());
 		mysql_set_charset ('UTF8');
 		mysql_select_db($this->dbConfig['db']);
 	}
