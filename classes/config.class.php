@@ -17,6 +17,11 @@ class Config
 		$this->getConfigPhp();
 	}
 	
+	/**
+	 * Return an array containing the database config
+	 * <i>array(host, user, passwd, db, tables(array(pages, news)))</i>
+	 * @return array DbConfig
+	 */
 	public function getDbConfig()
 	{
 		return array(

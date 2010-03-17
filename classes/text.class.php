@@ -1,6 +1,16 @@
 <?php
+/**
+ * Manages the pages text
+ * @author seb.vaucher
+ *
+ */
 class Text
 {
+	/**
+	 * Return the text of the page $page
+	 * @return string The text
+	 * @param string $page
+	 */
 	public static function getText($page)
 	{
 		if(file_exists('pages/'.$page.'.php'))
