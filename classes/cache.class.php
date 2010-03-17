@@ -16,7 +16,7 @@ class Cache
 	
 	public function __construct($file, $duration)
 	{
-		$this->file = "_cache/$file.cache.html";
+		$this->file = "_cache/$file.cache";
 		$this->duration = $duration;
 	}
 	
