@@ -37,13 +37,13 @@ mysql_select_db($mysqlDb);?>
 				<div id="header"></div>				
 			</div>				
 			<div id="contenu">
-			<?php if(strpos($_SERVER["PHP_SELF"], 'news_')!==false){?>
+			<?php if(strpos($_SERVER["PHP_SELF"], 'news')!==false){?>
 				<h2>Gestion des news</h2>
-			<?php }elseif(strpos($_SERVER["PHP_SELF"], 'page_')!==false){?>
+			<?php }elseif(strpos($_SERVER["PHP_SELF"], 'page')!==false){?>
 				<h2>Gestion des pages</h2>
-			<?php }elseif(strpos($_SERVER["PHP_SELF"], 'template_')!==false){?>
-				<h2>Changement de template</h2>
-			<?php }elseif(strpos($_SERVER["PHP_SELF"], 'image_')!==false){?>
+			<?php }elseif(strpos($_SERVER["PHP_SELF"], 'settings')!==false){?>
+				<h2>Configuration générale</h2>
+			<?php }elseif(strpos($_SERVER["PHP_SELF"], 'image')!==false){?>
 				<h2>Gestion des images</h2>
 			<?php }else{?>
 				<h2>Accueil administration</h2>

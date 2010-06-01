@@ -215,7 +215,7 @@ switch($_GET['action'])
 				<input type="submit" value="Suite &gt;&gt;" />
 				</form><?php
 			}
-			echo '<br/><a href="page_index.php">Retour accueil gestion des pages</a></p>';
+			echo '<br/><a href="page.php">Retour accueil gestion des pages</a></p>';
 		//Fin supprimer
 		break;
 }
