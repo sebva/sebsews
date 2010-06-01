@@ -207,7 +207,7 @@ Fermeture de la connexion à MySQL...
 <h3>Installation terminée !</h3><p><a href="http://<?php echo $domaine.$repertoire; ?>">Retour au site</a></p>		
 				<?php } ?>
 				<div id="footer">
-					<p><a href="http://sebseasywebsite.sourceforge.net/">Powered by Séb's EasyWebSite</a></p>
+					<p><a href="http://code.google.com/p/sebsews/">Powered by Séb's EasyWebSite</a></p>
 				</div>
 			</div>
 		</div>
