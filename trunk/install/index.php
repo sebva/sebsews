@@ -122,10 +122,10 @@
 							if(mysql_connect($mysqlHost, $mysqlUser, $mysqlPassword)!==false) echo '<span style="color:green;">OK !</span>';
 							else echo '<span style="color:red;">Erreur !</span>'; ?><br/>
 						Changement de l'encodage MySQL pour UTF8...
-							<?php if(mysql_set_charset ('UTF8')==true) echo '<span style="color:green;">OK !</span>';
+							<?php if(mysql_set_charset ('UTF8')) echo '<span style="color:green;">OK !</span>';
 							else echo '<span style="color:red;">Erreur !</span>'; ?><br/>
 						Choix de la base de données...
-						<?php if(mysql_select_db($mysqlDb)==true) echo '<span style="color:green;">OK !</span>';
+						<?php if(mysql_select_db($mysqlDb)) echo '<span style="color:green;">OK !</span>';
 							else echo '<span style="color:red;">Erreur !</span>'; ?><br/>
 						Création de la table des news...
 						<?php mysql_query('DROP TABLE IF EXISTS `'.$mysqlTableNews.'`');
@@ -139,7 +139,7 @@
   `categorie` text NOT NULL,
   `categorieshort` text NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2')==true) echo '<span style="color:green;">OK !</span>';
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2')) echo '<span style="color:green;">OK !</span>';
 else echo '<span style="color:red;">Erreur !</span>'; ?><br/>
 Remplissage de la table des news...
 <?php if(mysql_query("INSERT INTO `".$mysqlDb."`.`".$mysqlTableNews."` (
@@ -169,7 +169,7 @@ CURRENT_TIMESTAMP , '1', 'sebyx', 'Bienvenue dans Seb\'s EasyWebSite !', '<p>Seb
   `images` text NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `shorttitle` (`shorttitle`(256))
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3")==true) echo '<span style="color:green;">OK !</span>';
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3")) echo '<span style="color:green;">OK !</span>';
 	else echo '<span style="color:red;">Erreur !</span>'; ?> <br/>
 	Remplissage de la table des pages...
 	<?php if(mysql_query("INSERT INTO `".$mysqlDb."`.`".$mysqlTablePages."` (
@@ -200,9 +200,12 @@ VALUES (
 CURRENT_TIMESTAMP , 'News', 'News', '1', ''
 )"))echo '<span style="color:green;">News OK ! </span>';
 							else echo '<span style="color:red;">Erreur !</span>'; ?><br/>
-							
+							<?php
+							$tblLogin = "CREATE TABLE `".$mysqlDb."`.`login` (`id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY, `login` VARCHAR(255) NOT NULL, `rank` VARCHAR(255) NOT NULL DEFAULT \'user\', `passwd` TEXT NOT NULL, UNIQUE (`login`)) ENGINE = MyISAM CHARACTER SET utf8 COLLATE utf8_general_ci;";
+							if(mysql_query($tblLogin))echo '<span style="color:green;">News OK ! </span>';
+							else echo '<span style="color:red;">Erreur !</span>'; ?><br/>
 Fermeture de la connexion à MySQL...
-<?php if(mysql_close()==true) echo '<span style="color:green;">OK !</span>';
+<?php if(mysql_close()) echo '<span style="color:green;">OK !</span>';
 							else echo '<span style="color:red;">Erreur !</span>'; ?></p>
 <h3>Installation terminée !</h3><p><a href="http://<?php echo $domaine.$repertoire; ?>">Retour au site</a></p>		
 				<?php } ?>
