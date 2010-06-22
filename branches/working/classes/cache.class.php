@@ -20,7 +20,7 @@
 /**
  * This class is for cache management
  *
- * @author seb.vaucher
+ * @author Sébastien Vaucher
  */
 class Cache
 {
@@ -49,7 +49,7 @@ class Cache
 	
 	/**
 	 * Check if the cache is outdated
-	 * @return bool True if it worked, otherwise false
+	 * @return bool True if cache is outdated, otherwise false
 	 */
 	public function isExpired()
 	{
